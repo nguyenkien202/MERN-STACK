@@ -1,0 +1,11 @@
+@import '_settiing.scss';
+
+.navbar {
+    padding-left: 10px;
+    display:flex;
+    align-items: center;
+    height:$navbar-broad;
+    &.app{
+        background-color: green;
+    }
+}

@@ -1,22 +1,15 @@
-
-import './App.css';
+import React from 'react';
+import './App.scss';
+import Appbar from 'component/AppBar/Appbar'
+import Broadbar from 'component/BroadBar/Broadbar'
+import Broadcontent from 'component/BroadContent/Broadcontent'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mern_stack_">
+      <Appbar />
+      <Broadbar />
+      <Broadcontent />
     </div>
   );
 }

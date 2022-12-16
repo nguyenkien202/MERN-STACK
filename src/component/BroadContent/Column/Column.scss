@@ -1,0 +1,165 @@
+@import '_settiing.scss';
+
+$column-height:calc(#{$app-broadcontent-height} - #{$gap*3});
+.column{
+    flex:0 0 auto;
+    width:300px;
+    height:$column-height;
+    margin:10px;
+    overflow-y: auto;
+     margin-left: $gap;
+    > * {
+        background-color: rgb(194, 185, 185);
+       color:#333;
+       padding:0 8px;
+       
+    }
+    header.column-drag-handle{
+        padding:5px 8px;
+        height:$column-header-height;
+        line-height: $column-header-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-top-left-radius: $column-border-radius;
+        border-bottom-right-radius: $column-border-radius;
+        cursor: pointer;
+        display:flex;
+        .column-title{
+          flex:90%;
+        }
+        .dropdown-title{
+          flex:10%;
+          position:relative;
+          line-height: unset;
+          padding:none;
+         
+            .dropdown-menu{
+              padding:0;
+              min-width: 200px;
+              right:30px;
+              a.dropdown-item{
+                padding:0.1rem 1rem;
+                font-size:14px;
+                &:not(:last-child){
+                  border-bottom: 1px solid $bg-color;
+                }
+              }
+            }
+          }
+          
+        }
+        .dropdown{
+          padding:0;
+          margin: 0;
+        button.dropdown-btn{
+          padding:0 10px;
+          font-size:16px;
+          height:32px;
+          font-weight: bold;
+          letter-spacing: 1px;
+          background-color:$bg-color;
+          border:none;
+          color:black;
+          &::after{
+            content:'...';
+            border:none;
+            vertical-align: 1.255em;
+          }
+          &:hover{
+              background-color:darken($bg-color,10);
+          }
+         
+        }
+    }
+    footer{
+        padding-left: 10px;
+        height:36px;
+        line-height: 36px;
+        border-top-left-radius: $column-border-radius;
+        border-bottom-right-radius: $column-border-radius;
+        color:#888;
+        .footer-actions{
+         margin-left:$gap;
+         cursor:pointer;
+         &:hover{
+          color:#333;
+         }
+        }
+    }
+    .card-list{
+        list-style: none;
+        margin:0;
+        max-height: calc(#{$column-height} - #{$column-header-height} - #{$column-footer-height});
+        overflow-y:auto;
+        &::-webkit-scrollbar{
+          -webkit-appearance: none;
+          width:10px;
+          height:10px;
+        
+        }
+       &::-webkit-scrollbar:horizontal{
+           width:11px;
+           }
+       &::-webkit-scrollbar-thumb{
+           background-color: white;
+           border-radius: 50px;
+         }
+          .card-ghost{
+            transition:transform 0.18s ease-in-out;
+            transform: rotateZ(5deg);
+          }
+          .card-ghost-drop{
+            transition:transform 0.18s ease-in-out;
+            transform: rotateZ(0deg);
+            font-weight: bold;
+          }
+          .card-drop-preview{
+            background-color: rgba(150,150,200,0.1);
+            border: 1px dashed #abc;
+            margin:5px;
+          }
+          span.cancel-new-column{
+            margin-left: 70px;
+            cursor:pointer;
+            i{
+              font-size: 18px;
+              color:$color-cancel;
+              &:hover{
+                color:darken($color-cancel,10);
+              }
+            }
+          }
+          .add-new-cards{
+            .enter-new-column-3{
+              min-height:54px;
+              max-height: 162px;
+              margin-bottom: 10px;
+            }
+            .enter-new-column-3{
+              width:250px;
+             max-width: 250px;
+             line-height: 40px;
+             margin-left:10px;
+             padding:4px 0px 4px 15px ;
+             background-color:$bg-color;
+             border-radius: $column-border-radius;
+             font-size: 15px;
+             .button-success{
+               border:none;
+               outline:none;
+               background-color:rgb(77, 168, 77);
+               border-radius: $column-border-radius;
+               width:90px;
+               height:40px;
+               line-height: 40px;
+               font-size: 14px;
+               color:white;
+             }
+          }
+          .add-new-cards-2{
+              margin-bottom:3px;
+          }
+        }
+       
+      }
+    }
